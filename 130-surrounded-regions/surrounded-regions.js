@@ -6,7 +6,8 @@ var solve = function(board) {
     const r = board.length
     const c = board[0].length
     const visit = (i,j) => {
-        if(i < 0 || j < 0 || i >= r || j >= c || board[i][j] !== "O") return
+        if(i < 0 || j < 0 || i >= r || j >= c || board[i][j] !== "O") 
+        return;
         board[i][j] = "1"
         visit(i,j+1)
         visit(i+1,j)
