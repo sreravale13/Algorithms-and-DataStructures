@@ -13,7 +13,7 @@
 var getMinimumDifference = function(root) {
    let adjcent = [];
     let minDiff = Infinity;
-    
+    // inorder traversal to get adjecent nodes value and check differences between nodes
     function dfs(node){
         if (!node) return;
         dfs(node.left);
@@ -21,7 +21,7 @@ var getMinimumDifference = function(root) {
         dfs(node.right);
     }
     
-    dfs(root); // 🔥 Must happen before using adjcent
+    dfs(root); 
     
     for(let i = 0 ; i < adjcent.length - 1; i++){
         minDiff = Math.min(minDiff, adjcent[i+1] - adjcent[i]);
